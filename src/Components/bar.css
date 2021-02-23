@@ -1,0 +1,13 @@
+.Bar {
+	width: 5px;
+	margin: 5px;
+	display: inline-block;
+	align-items: center;
+	background-color: turquoise;
+}
+.Container {
+	top: 100px;
+	left: 100px;
+	position: absolute;
+	align-items: center;
+}
