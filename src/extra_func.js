@@ -1,9 +1,3 @@
-// Change this value for the speed of the animations.
-export const ANIMATION_SPEED_MS = 2;
-
-// Change this value for the number of bars (value) in the array.
-export const NUMBER_OF_ARRAY_BARS = 80;
-
 export const color1 = "turquoise";
 export const color2 = "#ff0000";
 export const color3 = "#41ff00";

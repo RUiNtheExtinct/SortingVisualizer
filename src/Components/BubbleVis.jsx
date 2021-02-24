@@ -1,9 +1,9 @@
 import {bubble} from "../Algorithms/BubbleSort"
-import {ANIMATION_SPEED_MS,color1,color2} from "../extra_func"
+import {color1,color2} from "../extra_func"
 import "./bar.css";
 
 
-export function bubble_disp(a)
+export function bubble_disp(a,ANIMATION_SPEED_MS)
 {
 	const [anim,b]=bubble([],a)
 	for(let i=0;i<anim.length;i++)

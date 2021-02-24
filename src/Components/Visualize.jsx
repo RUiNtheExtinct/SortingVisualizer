@@ -1,11 +1,11 @@
 import React from "react";
 import "./bar.css";
-import {ANIMATION_SPEED_MS,NUMBER_OF_ARRAY_BARS,randomNumber} from "../extra_func"
+import {randomNumber} from "../extra_func"
 import {bubble_disp} from "./BubbleVis"
 import {quick_disp} from "./QuickVis"
 
 const bar_low=10;
-const bar_high=500;
+const bar_high=480;
 
 export default class Visualize extends React.Component
 {
@@ -14,7 +14,11 @@ export default class Visualize extends React.Component
 		super(props);
 		this.state={
 			array: [],
+			speed: 1.5,
+			no: 80,
 		};
+		this.handleChange=this.handleChange.bind(this);
+		this.handleSubmit=this.handleSubmit.bind(this);
 	}
 
 	componentDidMount()
@@ -22,10 +26,26 @@ export default class Visualize extends React.Component
 		this.NewArray();
 	}
 
+	handleChange(event)
+	{
+		const value=event.target.value;
+		this.setState({
+			...this.state,
+			[event.target.name]: value
+		});
+	}
+
+	handleSubmit(event)
+	{
+		console.log(this.state);
+		this.NewArray();
+		event.preventDefault();
+	}
+
 	NewArray=() =>
 	{
 		const a=[];
-		for(let i=0;i<NUMBER_OF_ARRAY_BARS;i++)
+		for(let i=0;i<this.state.no;i++)
 		{
 			a.push(randomNumber(bar_low,bar_high));
 		}
@@ -40,17 +60,17 @@ export default class Visualize extends React.Component
 		let anim,b;
 		if(cat===1)
 		{
-			[anim,b]=bubble_disp(a);
+			[anim,b]=bubble_disp(a,this.state.speed);
 		}
 		else if(cat===2)
 		{
-			[anim,b]=quick_disp(a);
+			[anim,b]=quick_disp(a,this.state.speed);
 		}
 		setTimeout(() =>
 		{
 			this.setState({array: b});
 			console.log(this.state.array);
-		},ANIMATION_SPEED_MS*(anim.length+1));
+		},this.state.speed*(anim.length+1));
 	};
 
 	render()
@@ -71,6 +91,15 @@ export default class Visualize extends React.Component
 					<button onClick={this.NewArray}>Generate New Array</button>
 					<button onClick={() => this.Sort(1)}>Bubble Sort</button>
 					<button onClick={() => this.Sort(2)}>Quick Sort</button>
+					<form onSubmit={this.handleSubmit}>
+						<label>
+							No. of Bars:
+							<input type="number" name="no" value={this.state.no} onChange={this.handleChange} />
+							MS per frame:
+							<input type="number" name="speed" value={this.state.speed} onChange={this.handleChange} />
+						</label>
+						<input type="submit" value="Submit" />
+					</form>
 				</div>
 			</div>
 		);
