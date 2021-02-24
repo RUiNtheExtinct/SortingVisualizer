@@ -1,14 +1,6 @@
 import {bubble} from "../Algorithms/BubbleSort"
+import {ANIMATION_SPEED_MS,color1,color2} from "../extra_func"
 import "./bar.css";
-
-// Change this value for the speed of the animations.
-const ANIMATION_SPEED_MS=55;
-
-// This is the main color of the array bars.
-const PRIMARY_COLOR="turquoise";
-
-// This is the color of array bars that are being compared throughout the animations.
-const SECONDARY_COLOR="red";
 
 
 export function bubble_disp(a)
@@ -24,8 +16,8 @@ export function bubble_disp(a)
 				const [b1id,b2id]=anim[i];
 				const barOneStyle=arrayBars[b1id].style;
 				const barTwoStyle=arrayBars[b2id].style;
-				barOneStyle.backgroundColor=SECONDARY_COLOR;
-				barTwoStyle.backgroundColor=SECONDARY_COLOR;
+				barOneStyle.backgroundColor=color2;
+				barTwoStyle.backgroundColor=color2;
 			},i*ANIMATION_SPEED_MS);
 		}
 		else if(i%3===1)
@@ -47,8 +39,8 @@ export function bubble_disp(a)
 				const [b1id,b2id]=anim[i];
 				const barOneStyle=arrayBars[b1id].style;
 				const barTwoStyle=arrayBars[b2id].style;
-				barOneStyle.backgroundColor=PRIMARY_COLOR;
-				barTwoStyle.backgroundColor=PRIMARY_COLOR;
+				barOneStyle.backgroundColor=color1;
+				barTwoStyle.backgroundColor=color1;
 			},i*ANIMATION_SPEED_MS);
 		}
 	}

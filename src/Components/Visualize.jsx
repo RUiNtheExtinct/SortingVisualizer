@@ -1,15 +1,11 @@
 import React from "react";
 import "./bar.css";
-import {randomNumber} from "../Algorithms/extra_func"
+import {ANIMATION_SPEED_MS,NUMBER_OF_ARRAY_BARS,randomNumber} from "../extra_func"
 import {bubble_disp} from "./BubbleVis"
 import {quick_disp} from "./QuickVis"
 
-// Change this value for the speed of the animations.
-const ANIMATION_SPEED_MS=55;
-
-// Change this value for the number of bars (value) in the array.
-const NUMBER_OF_ARRAY_BARS=20;
-
+const bar_low=10;
+const bar_high=500;
 
 export default class Visualize extends React.Component
 {
@@ -31,7 +27,7 @@ export default class Visualize extends React.Component
 		const a=[];
 		for(let i=0;i<NUMBER_OF_ARRAY_BARS;i++)
 		{
-			a.push(randomNumber(10,500));
+			a.push(randomNumber(bar_low,bar_high));
 		}
 		this.setState({array: a});
 	};
@@ -40,7 +36,7 @@ export default class Visualize extends React.Component
 	Sort=(cat) =>
 	{
 		console.log(this.state.array);
-		var a=this.state.array.slice();
+		let a=this.state.array.slice();
 		let anim,b;
 		if(cat===1)
 		{
