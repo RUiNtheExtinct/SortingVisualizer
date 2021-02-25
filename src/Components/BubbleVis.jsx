@@ -1,6 +1,6 @@
 import {bubble} from "../Algorithms/BubbleSort"
 import {color1,color2} from "../extra_func"
-import "./bar.css";
+import "../bar.css";
 
 
 export function bubble_disp(a,ANIMATION_SPEED_MS)
@@ -13,7 +13,7 @@ export function bubble_disp(a,ANIMATION_SPEED_MS)
 		{
 			setTimeout(() =>
 			{
-				const [b1id,b2id]=anim[i];
+				const [b1id,b2id]=[anim[i][0],anim[i][1]];
 				const barOneStyle=arrayBars[b1id].style;
 				const barTwoStyle=arrayBars[b2id].style;
 				barOneStyle.backgroundColor=color2;

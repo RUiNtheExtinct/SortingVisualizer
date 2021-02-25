@@ -1,5 +1,5 @@
 import {quick} from "../Algorithms/QuickSort"
-import "./bar.css";
+import "../bar.css";
 import {color1,color2,color3} from "../extra_func"
 
 
