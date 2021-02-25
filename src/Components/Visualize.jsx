@@ -4,6 +4,7 @@ import {randomNumber} from "../extra_func"
 import {bubble_disp} from "./BubbleVis"
 import {insertion_disp} from "./InsertionVis";
 import {quick_disp} from "./QuickVis"
+import {selection_disp} from "./SelectionVis";
 
 const bar_low=10;
 const bar_high=480;
@@ -71,6 +72,10 @@ export default class Visualize extends React.Component
 		{
 			[anim,b]=insertion_disp(a,this.state.speed);
 		}
+		else if(cat===4)
+		{
+			[anim,b]=selection_disp(a,this.state.speed);
+		}
 		setTimeout(() =>
 		{
 			this.setState({array: b});
@@ -97,6 +102,7 @@ export default class Visualize extends React.Component
 					<button onClick={() => this.Sort(1)}>Bubble Sort</button>
 					<button onClick={() => this.Sort(2)}>Quick Sort</button>
 					<button onClick={() => this.Sort(3)}>Insertion Sort</button>
+					<button onClick={() => this.Sort(4)}>Selection Sort</button>
 					<form onSubmit={this.handleSubmit}>
 						<label>
 							No. of Bars:

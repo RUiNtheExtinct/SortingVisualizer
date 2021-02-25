@@ -2,7 +2,7 @@ export const color1 = "turquoise";
 export const color2 = "#ff0000";
 export const color3 = "#41ff00";
 
-export function panim(anim, a, b, c, d) {
+export function panim(anim, a, b, c, d = 0) {
 	anim.push([b, c, d]);
 	if (d === 3) {
 		anim.push([b, c]);
