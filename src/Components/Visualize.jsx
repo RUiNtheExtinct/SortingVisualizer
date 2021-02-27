@@ -9,7 +9,7 @@ import {selection_disp} from "./SelectionVis";
 const bar_low=10;
 const bar_high=480;
 
-export default class Visualize extends React.Component
+export default class App extends React.Component
 {
 	constructor(props)
 	{
@@ -87,16 +87,27 @@ export default class Visualize extends React.Component
 	{
 		const {array}=this.state;
 		return (
+			//<div className={window.innerHeight<Math.max(array)+100? "Container1":"Container2"}>
 			<div className="Container">
-				{array.map((Value,index) => (
-					<div
-						className="Bar"
-						key={index}
-						style={{
-							height: `${ Value }px`,
-						}}
-					></div>
-				))}
+				<div>
+					{array.map((Value,index) => (
+						<div
+							className="Bar"
+							key={index}
+							style={{
+								height: `${ Value }px`,
+							}}
+						></div>
+					))}
+				</div>
+				<div>
+					{array.map((Value,index) => (
+						<div
+							className="Num"
+							key={index}
+						>{Value}</div>
+					))}
+				</div>
 				<div>
 					<button onClick={this.NewArray}>Generate New Array</button>
 					<button onClick={() => this.Sort(1)}>Bubble Sort</button>

@@ -9,6 +9,8 @@ export function insertion_disp(a,ANIMATION_SPEED_MS)
 	for(let i=0;i<anim.length;i++)
 	{
 		const arrayBars=document.getElementsByClassName("Bar");
+		const arrayNums=document.getElementsByClassName("Num");
+
 		if(i%3===0)
 		{
 			setTimeout(() =>
@@ -47,16 +49,21 @@ export function insertion_disp(a,ANIMATION_SPEED_MS)
 					const barTwoStyle=arrayBars[b2id].style;
 					barOneStyle.height=`${ b1 }px`;
 					barTwoStyle.height=`${ b2 }px`;
+					arrayNums[b1id].innerHTML=b1;
+					arrayNums[b2id].innerHTML=b2;
 				} else if(c===2)
 				{
 					const barOneStyle=arrayBars[b1id].style;
 					const barTwoStyle=arrayBars[b2id].style;
 					barOneStyle.height=`${ b2 }px`;
 					barTwoStyle.height=`${ b2 }px`;
+					arrayNums[b1id].innerHTML=b2;
+					arrayNums[b2id].innerHTML=b2;
 				} else
 				{
 					const barOneStyle=arrayBars[b1id].style;
 					barOneStyle.height=`${ b2id }px`;
+					arrayNums[b1id].innerHTML=b2id;
 				}
 			},i*ANIMATION_SPEED_MS);
 		}

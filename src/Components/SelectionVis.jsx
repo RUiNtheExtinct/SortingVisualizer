@@ -9,6 +9,7 @@ export function selection_disp(a,ANIMATION_SPEED_MS)
 	for(let i=0;i<anim.length;i++)
 	{
 		const arrayBars=document.getElementsByClassName("Bar");
+		const arrayNums=document.getElementsByClassName("Num");
 		if(i%3===0)
 		{
 			setTimeout(() =>
@@ -30,6 +31,8 @@ export function selection_disp(a,ANIMATION_SPEED_MS)
 				const [b1,b2]=anim[i];
 				barOneStyle.height=`${ b1 }px`;
 				barTwoStyle.height=`${ b2 }px`;
+				arrayNums[b1id].innerHTML=b1;
+				arrayNums[b2id].innerHTML=b2;
 			},i*ANIMATION_SPEED_MS);
 		}
 		else

@@ -1,13 +1,25 @@
 .Bar {
-	width: 5px;
-	margin: 5px;
+	width: 8px;
+	margin: 6px;
 	display: inline-block;
 	align-items: center;
 	background-color: turquoise;
 }
+.Num {
+	text-align: left;
+	color: turquoise;
+	width: 8px;
+	margin: 6px;
+	font-size: x-small;
+	display: inline-block;
+	align-items: flex-start;
+}
 .Container {
-	top: 100px;
-	left: 100px;
-	position: absolute;
+	top: 110px;
+	position: relative;
+	color: turquoise;
+	background-color: #282c34;
+	width: 100vmax;
+	height: 100vmin;
 	align-items: center;
 }

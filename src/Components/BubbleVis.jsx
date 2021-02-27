@@ -9,6 +9,7 @@ export function bubble_disp(a,ANIMATION_SPEED_MS)
 	for(let i=0;i<anim.length;i++)
 	{
 		const arrayBars=document.getElementsByClassName("Bar");
+		const arrayNums=document.getElementsByClassName("Num");
 		if(i%3===0)
 		{
 			setTimeout(() =>
@@ -28,8 +29,10 @@ export function bubble_disp(a,ANIMATION_SPEED_MS)
 				const barOneStyle=arrayBars[b1id].style;
 				const barTwoStyle=arrayBars[b2id].style;
 				const [b1,b2]=anim[i];
-				barOneStyle.height=`${ b1 }px`;
-				barTwoStyle.height=`${ b2 }px`;
+				barOneStyle.height=`${ b2 }px`;
+				barTwoStyle.height=`${ b1 }px`;
+				arrayNums[b1id].innerHTML=b2;
+				arrayNums[b2id].innerHTML=b1;
 			},i*ANIMATION_SPEED_MS);
 		}
 		else
