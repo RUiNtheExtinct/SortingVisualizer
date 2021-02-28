@@ -16,8 +16,8 @@ export default class App extends React.Component
 		super(props);
 		this.state={
 			array: [],
-			speed: 1000,
-			no: 10,
+			speed: 2,
+			no: 65,
 		};
 		this.handleChange=this.handleChange.bind(this);
 		this.handleSubmit=this.handleSubmit.bind(this);
@@ -109,19 +109,23 @@ export default class App extends React.Component
 					))}
 				</div>
 				<div>
-					<button onClick={this.NewArray}>Generate New Array</button>
-					<button onClick={() => this.Sort(1)}>Bubble Sort</button>
-					<button onClick={() => this.Sort(2)}>Quick Sort</button>
-					<button onClick={() => this.Sort(3)}>Insertion Sort</button>
-					<button onClick={() => this.Sort(4)}>Selection Sort</button>
+					<button className="SortButton" onClick={this.NewArray}>Generate New Array</button>
+					<button className="SortButton" onClick={() => this.Sort(1)}>Bubble Sort</button>
+					<button className="SortButton" onClick={() => this.Sort(2)}>Quick Sort</button>
+					<button className="SortButton" onClick={() => this.Sort(3)}>Insertion Sort</button>
+					<button className="SortButton" onClick={() => this.Sort(4)}>Selection Sort</button>
 					<form onSubmit={this.handleSubmit}>
 						<label>
-							No. of Bars:
-							<input type="number" name="no" value={this.state.no} onChange={this.handleChange} />
-							MS per frame:
-							<input type="number" name="speed" value={this.state.speed} onChange={this.handleChange} />
+							<div>
+								No. of Bars:
+							<input className="TextArea" type="number" name="no" value={this.state.no} onChange={this.handleChange} />
+							</div>
+							<div>
+								MS per frame:
+							<input className="TextArea" type="number" name="speed" value={this.state.speed} onChange={this.handleChange} />
+							</div>
 						</label>
-						<input type="submit" value="Submit" />
+						<input className="SortButton" type="submit" value="Submit" />
 					</form>
 				</div>
 			</div>

@@ -15,11 +15,31 @@
 	align-items: flex-start;
 }
 .Container {
-	top: 110px;
+	top: 20px;
 	position: relative;
 	color: turquoise;
 	background-color: #282c34;
 	width: 100vmax;
-	height: 100vmin;
+	height: max-content;
 	align-items: center;
+}
+
+.SortButton {
+	margin: 10px;
+	border-width: 1px;
+	padding: 5px;
+	border-color: turquoise;
+	border-radius: 5px;
+	color: turquoise;
+	background-color: #282c34;
+}
+
+.TextArea {
+	margin: 10px;
+	border-width: 1px;
+	padding: 5px;
+	border-color: turquoise;
+	border-radius: 5px;
+	color: turquoise;
+	background-color: #282c34;
 }
